@@ -4,7 +4,7 @@ import morgan from 'morgan';
 import apiRouter from './api/routes';
 
 const server = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8082;
 
 const middleware = [
   morgan('combined'),
