@@ -23,8 +23,7 @@ usersRouter.get('/', (request: Request, response: Response, next: NextFunction) 
 
 usersRouter.post('/create', (request: Request, response: Response, next: NextFunction) => {
 
-  const name: any = request.body.name;
-  const email: any = request.body.email;
+  const { name, email } = request.body;
 
   try {
 
@@ -38,7 +37,7 @@ usersRouter.post('/create', (request: Request, response: Response, next: NextFun
           createUser({ name, email })
             .then(result => {
 
-              const user_id: number  = result.id;
+              const user_id: number = result.id;
 
               response.status(201).json({ user_id });
             });
